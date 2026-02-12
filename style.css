@@ -14,7 +14,6 @@ body{
     background: #E2E1E6;
     overflow-x: hidden;
     color: #282828;
-
 }
 
 
@@ -182,7 +181,6 @@ svg
 .video-container
 {
     width: 100%;
-    height: 100vh;
     overflow: hidden;
     position: relative;
 }
@@ -205,47 +203,49 @@ svg
     font-weight: 700;
 } 
 
-.about-container
-{
+.about-container {
     margin-top: 200px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 400px;
-    padding: auto;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 4%;
 }
 
-.about-texts
-{
 
-    text-align: center;
+.about-texts,
+.about-video {
+    flex: 1;
+}
+
+
+.about-texts {
+    text-align: left;
     align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin: 200px;
-    margin-left: 30px;
 }
 
-.about-texts p
-{
+
+.about-texts p {
     font-size: 1.2rem;
     color: #282828;
-    margin-top: 30px;
+    margin-top: 20px;
+    max-width: 500px;
 }
 
-.about-title h2
-{
+.about-title h2 {
     font-size: 3rem;
 }
 
-.about-image
-{
-    width: 400px;
-    height: 400px;
-    margin-right: 50px;
+
+.about-video video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 30px 30px -25px rgba(10, 11, 17, 0.205);
 }
+
 
 #svg-2
 {
@@ -909,6 +909,22 @@ footer
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-texts {
+        text-align: center;
+    }
+
+    .about-video video {
+        max-width: 100%;
+    }
+}
+
 
 .submit-button
 {

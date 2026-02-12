@@ -4,11 +4,9 @@ if (window.gsap) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const paths = document.querySelectorAll("svg path");
-    
     paths.forEach((path) => {
         const pathLength = path.getTotalLength();
         gsap.set(path, { strokeDasharray: pathLength, strokeDashoffset: pathLength });
-        
         const svgContainer = path.closest(".svg-container");
         if (svgContainer) {
             gsap.to(path, {
@@ -23,4 +21,22 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
+
+ 
+        gsap.utils.toArray('p, h1, h2, h3, h4, h5, h6').forEach(el => {
+            if (el.closest('.inicial, .copyright')) return;
+            gsap.fromTo(el,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 90%',
+                        toggleActions: 'play none none none'
+                    }
+                }
+            );
+        });
 });
