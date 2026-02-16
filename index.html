@@ -72,16 +72,20 @@
     </div>
 
     <div class="how-works">
-        <div class="how-image">
-            <img src="Image/carro2.png" alt="how image">
+        <div class="how-video">
+            <video autoplay muted loop playsinline>
+                <source src="Image/car_fix.mp4" type="video/mp4">
+            </video>
         </div>
-        <div class="how-title">
-            <h2>Como Funciona?</h2>
+
+        <div class="how-works-texts">
+            <h2>O que é o Volante?</h2>
+            <p>O Volante <strong>centraliza os principais processos</strong> da sua oficina em um único sistema.
+                <br/>Com ele, é possível criar orçamentos, cadastrar clientes e veículos de forma rápida e organizada, <strong>em um só lugar.</strong> 
+                <br/>Além disso, o Volante conta com automações inteligentes que permitem realizar esses processos por texto, áudio ou foto, reduzindo tarefas manuais e <strong>otimizando o tempo</strong> no dia a dia.
+                <br/>É tecnologia aplicada pra <strong>simplificar a rotina e aumentar a eficiência</strong> do seu negócio.</p>
         </div>
-        <div class="how-text">
-            <p>O Volante centraliza os principais processos da sua oficina em um único sistema.<br/>Com ele, é possível criar orçamentos, cadastrar clientes e veículos de forma rápida e organizada, tudo em um só lugar.<br/>Além disso, o Volante conta com automações inteligentes que permitem realizar esses processos por texto, áudio ou foto, reduzindo tarefas manuais e otimizando o tempo no dia a dia.
-É tecnologia aplicada pra simplificar a rotina e aumentar a eficiência do seu negócio.</p>
-        </div>
+        
     </div>
 
     <!-- <div class="video-container">
@@ -97,10 +101,13 @@
     <div class="about-container" id="about">
         <div class="about-texts">
             <div class="about-title">
-                <h2>Sobre Nós</h2>
+                <h2>Como funciona?</h2>
             </div>
             <div class="about-text">
-                <p>O Volante é um sistema desenvolvido para apoiar pequenas empresas na automação e organização de processos do dia a dia. Utilizando tecnologia, ajudamos a reduzir tarefas manuais, otimizar rotinas e modernizar a gestão, garantindo mais eficiência e controle operacional.O Volante foi criado para simplificar e fortalecer o funcionamento da sua oficina.</p>
+                <p>O Volante é um sistema desenvolvido para otimizar a gestão de orçamentos, clientes e veículos.
+                    <br/>Com ele, é possível criar orçamentos completos, adicionar itens, aplicar preços e descontos, com cálculo automático do valor final.
+                    <br/>O cadastro de clientes e veículos é realizado durante o próprio processo, garantindo agilidade e organização.
+                    <br/>Além disso, o sistema conta com uma automação com IA que permite criar e gerenciar processos por texto, áudio ou imagem, de forma simples e intuitiva.</p>
             </div>
         </div>
 
@@ -114,20 +121,20 @@
        <div class="funcions">
         <div class="funcion-scheduling">
             <i class='bx bxs-calendar-check' style="font-size: 50px;"></i>
-            <h3>Agendamento de Serviços</h3>
-            <p>Organize e gerencie os agendamentos de serviços da sua oficina de forma eficiente.</p>
+            <h3>Serviços</h3>
+            <p>Gerencie os serviços da sua oficina de forma eficiente e organizada.Tenha controle total sobre o andamento dos orçamentos, da oficina ao cliente.</p>
         </div>
 
         <div class="funcion-vehicles">
             <i class='bx bxs-car' style="font-size: 50px;"></i>
             <h3>Cadastro de Veículos</h3>
-            <p>Registre e mantenha um banco de dados completo dos veículos atendidos pela sua oficina.</p>
+            <p>Armazene e gerencie informações completas dos veículos atendidos com facilidade.</p>
         </div>
 
         <div class="funcion-register">
             <i class='bx bxs-dashboard' style="font-size: 50px;"></i>
             <h3>Gerenciamento de Clientes</h3>
-            <p>Mantenha um controle organizado dos clientes, facilitando o atendimento e a comunicação.</p>
+            <p>Controle dados dos clientes de forma organizada, otimizando o atendimento e o relacionamento.</p>
         </div>
        </div>
     </div>
@@ -276,15 +283,16 @@
                 <h2>VOLANTE</h2>
             </div>
 
-            <div class="form">
+
+            <form class="form" method="POST" action="sendmail.php">
                 <p class="form-title">Nome:</p>
-                <input type="text" placeholder="Insira seu nome...">
-                 <p class="form-title">Email:</p>
-                <input type="email" placeholder="Insira seu email...">
-                 <p class="form-title">Comentario:</p>
-                <input type="text" placeholder="Insira seu comentário...">
+                <input type="text" name="nome" placeholder="Insira seu nome..." required>
+                <p class="form-title">Email:</p>
+                <input type="email" name="email" placeholder="Insira seu email..." required>
+                <p class="form-title">Comentário:</p>
+                <input type="text" name="comentario" placeholder="Insira seu comentário..." required>
                 <button type="submit">Enviar</button>
-            </div>
+            </form>
 
         <p class="copyright">&copy; 2026 VOLANTE. Todos os direitos reservados.</p>
 

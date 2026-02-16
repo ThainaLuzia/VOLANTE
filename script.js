@@ -2,6 +2,8 @@ if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
 }
 
+
+// efeito de desenho para os caminhos SVG
 document.addEventListener("DOMContentLoaded", function() {
     const paths = document.querySelectorAll("svg path");
     paths.forEach((path) => {
@@ -22,51 +24,69 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
- 
-        gsap.utils.toArray('p, h1, h2, h3, h4, h5, h6').forEach(el => {
-            if (
-                el.closest('.inicial, .copyright') ||
-                el.closest('.funcion-scheduling, .funcion-vehicles, .funcion-register')
-            ) return;
-            gsap.fromTo(el,
-                { opacity: 0, y: 20 },
+    // fade in para textos
+    gsap.utils.toArray('p, h1, h2, h3, h4, h5, h6').forEach(el => {
+        if (
+            el.closest('.inicial, .copyright') ||
+            el.closest('.funcion-scheduling, .funcion-vehicles, .funcion-register')
+        ) return;
+        gsap.fromTo(el,
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            }
+        );
+    });
+
+    // fade in para os cards de funcoes
+    const cardClasses = [
+        '.funcion-scheduling',
+        '.funcion-vehicles',
+        '.funcion-register'
+    ];
+    cardClasses.forEach((cls, idx) => {
+        const card = document.querySelector(cls);
+        if (card) {
+            const children = card.querySelectorAll('i, h3, p');
+            gsap.fromTo(children,
+                { opacity: 0, y: 30 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.5,
+                    stagger: 0.15,
+                    delay: idx * 0.5,
                     scrollTrigger: {
-                        trigger: el,
+                        trigger: card,
                         start: 'top 90%',
                         toggleActions: 'play none none none'
                     }
                 }
             );
-        });
+        }
+    });
 
-        const cardClasses = [
-            '.funcion-scheduling',
-            '.funcion-vehicles',
-            '.funcion-register'
-        ];
-        cardClasses.forEach((cls, idx) => {
-            const card = document.querySelector(cls);
-            if (card) {
-                const children = card.querySelectorAll('i, h3, p');
-                gsap.fromTo(children,
-                    { opacity: 0, y: 30 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.5,
-                        stagger: 0.15,
-                        delay: idx * 0.5,
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 90%',
-                            toggleActions: 'play none none none'
-                        }
-                    }
-                );
+    // fade in para videos
+    gsap.utils.toArray('video').forEach(video => {
+        gsap.fromTo(video,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: video,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
             }
-        });
+        );
+    });
 });
