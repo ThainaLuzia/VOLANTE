@@ -1034,3 +1034,7 @@ footer
     align-content: center;
 }
 
+#svgPlan
+{
+    margin-top: -700px;
+}
