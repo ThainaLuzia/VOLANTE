@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                fetch('https://primary-production-7f742.up.railway.app/webhook-test/contato-site', {
+                fetch('https://primary-production-7f742.up.railway.app/webhook/contato-site', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
