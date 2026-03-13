@@ -24,6 +24,39 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+        const contactForm = document.querySelector('form.form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                fetch('https://primary-production-7f742.up.railway.app/webhook-test/contato-site', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: document.querySelector('#nome').value,
+                        email: document.querySelector('#email').value,
+                        mensagem: document.querySelector('#mensagem').value
+                    })
+                })
+                .then(async response => {
+                    console.log('Status da resposta:', response.status);
+                    let respText = await response.text();
+                    console.log('Resposta do servidor:', respText);
+                    if (response.ok) {
+                        alert('Mensagem enviada com sucesso!');
+                        contactForm.reset();
+                    } else {
+                        alert('Erro ao enviar mensagem.');
+                    }
+                })
+                .catch((err) => {
+                    console.error('Erro no fetch:', err);
+                    alert('Erro ao enviar mensagem.');
+                });
+            });
+        }
+
     // fade in para textos
     gsap.utils.toArray('p, h1, h2, h3, h4, h5, h6').forEach(el => {
         if (
