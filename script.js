@@ -2,6 +2,20 @@ if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
 }
 
+gsap.registerPlugin(SplitText);
+
+document.fonts.ready.then(() => {
+  gsap.set(".inicial", { opacity: 1 });
+  let split = SplitText.create(".inicial-title", ".inicial-text", { type: "words", aria: "hidden" });
+
+  gsap.from(split.words, {
+    opacity: 0,
+    duration: 2,
+    ease: "sine.out",
+    stagger: 0.1,
+  });
+});
+
 
 // efeito de desenho para os caminhos SVG
 document.addEventListener("DOMContentLoaded", function() {

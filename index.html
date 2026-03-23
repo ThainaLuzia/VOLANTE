@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+<!-- ScrollSmoother requires ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/TextPlugin.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/CustomEase.min.js"></script>
+<!-- CustomWiggle requires CustomEase -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/CustomWiggle.min.js"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
@@ -13,6 +24,7 @@
     <link rel="shortcut icon" href="Image/IconHead.ico" type="image/x-icon">
     <title>VOLANTE</title>
 </head>
+
 <body>
     <nav>
         <div class="logo">VOLANTE</div>
@@ -84,7 +96,16 @@
                 <br/>Com ele, é possível criar orçamentos, cadastrar clientes e veículos de forma rápida e organizada, <strong>em um só lugar.</strong> 
                 <br/>Além disso, o Volante conta com automações inteligentes que permitem realizar esses processos por texto, áudio ou foto, reduzindo tarefas manuais e <strong>otimizando o tempo</strong> no dia a dia.
                 <br/>É tecnologia aplicada pra <strong>simplificar a rotina e aumentar a eficiência</strong> do seu negócio.</p>
+
+            <div class="how-button" href="">
+                <button>
+                    <i class='bx bx-chevron-right' style="font-size: 30px;"></i> 
+                    Veja os planos
+                </button>
+            </div>
+
         </div>
+
         
     </div>
 
@@ -113,7 +134,7 @@
 
         <div class="about-video">
             <video autoplay muted loop playsinline>
-            <source src="Image/volante_2.mp4" type="video/mp4">
+            <source src="Image/volante_1.mp4" type="video/mp4">
         </div>
     </div>
 
